@@ -117,7 +117,7 @@ Key questions included:
 12. What is the average number of properties owned?
 13. How are customers distributed by risk weighting?
 14. What is the average income across risk categories?
-15. Which customers have the highest combined financial holdings?
+15. Which are the top 10 customers by total financial holdings?
 
 ---
 
