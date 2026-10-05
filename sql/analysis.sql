@@ -72,3 +72,11 @@ SELECT
 FROM banking
 GROUP BY risk_weighting
 ORDER BY risk_weighting;
+
+-- 15. Top 10 customers by total financial holdings
+SELECT 
+    risk_weighting,
+    ROUND(AVG(estimated_income), 2) AS average_income
+FROM banking
+GROUP BY risk_weighting
+ORDER BY risk_weighting;
