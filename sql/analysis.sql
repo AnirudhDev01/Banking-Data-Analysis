@@ -74,9 +74,16 @@ GROUP BY risk_weighting
 ORDER BY risk_weighting;
 
 -- 15. Top 10 customers by total financial holdings
-SELECT 
-    risk_weighting,
-    ROUND(AVG(estimated_income), 2) AS average_income
+SELECT
+    client_id,
+    name,
+    ROUND(
+        COALESCE(bank_deposits, 0) +
+        COALESCE(checking_accounts, 0) +
+        COALESCE(saving_accounts, 0) +
+        COALESCE(foreign_currency_account, 0),
+        2
+    ) AS total_financial_holdings
 FROM banking
-GROUP BY risk_weighting
-ORDER BY risk_weighting;
+ORDER BY total_financial_holdings DESC
+LIMIT 10;
